@@ -4,6 +4,7 @@ const { Sequelize } = require("sequelize");
 const sequelize = new Sequelize("taskmanager", "Garkusha", "bluesong11*", {
   host: "unicorn-taskmanager.database.windows.net",
   dialect: "mssql",
+  port: 1433,
   dialectOptions: {
     options: {
       encrypt: true,
