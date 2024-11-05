@@ -14,7 +14,7 @@ export default function Header() {
         <span className="px-2 py-1 bg-gradient-to-tr from-indigo-800 via-purple-400 to-pink-400 rounded-md text-white">
           TaskMan
         </span>
-        App
+        <span className="text-gray-500">App</span>
       </Link>
       <form>
         <TextInput
@@ -36,7 +36,7 @@ export default function Header() {
         </Link>
         <Navbar.Toggle />
       </div>
-      <Navbar.Collapse>
+      {/* <Navbar.Collapse>
         <Navbar.Link as={Link} to="/" active={path === "/"}>
           Home
         </Navbar.Link>
@@ -46,7 +46,7 @@ export default function Header() {
         <Navbar.Link as={Link} to="/dashboard" active={path === "/dashboard"}>
           Dashboard
         </Navbar.Link>
-      </Navbar.Collapse>
+      </Navbar.Collapse> */}
     </Navbar>
   );
 }
