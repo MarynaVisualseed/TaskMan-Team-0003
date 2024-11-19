@@ -5,7 +5,7 @@ import {
   PopoverPanel,
 } from "@headlessui/react";
 import React, { Fragment } from "react";
-import getInitials from "../utils/index.js";
+import { getInitials } from "../utils/index.js";
 
 const UserInfo = ({ user }) => {
   return (

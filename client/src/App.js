@@ -1,13 +1,13 @@
 import Login from "./pages/Login";
 import { Routes, Route, Navigate, useLocation, Outlet } from "react-router-dom";
 import { Toaster } from "sonner";
-import Dashboard from "./pages/Dashboard";
+import Project from "./pages/Project";
 import Tasks from "./pages/Tasks";
-import Users from "./pages/Users";
+// import Users from "./pages/Users";
 import Task from "./pages/Task";
 import { useSelector } from "react-redux";
 import Sidebar from "./components/Sidebar";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import CustomFooter from "./components/CustomFooter";
 import Header from "./components/Header";
 
@@ -24,7 +24,7 @@ function Layout() {
 
       {/* <MobileSidebar/> */}
       <div className="flex-1 overflow-y-auto">
-        <Navbar />
+        {/* <Navbar /> */}
 
         <div className="p-4 2xl:px-10">
           <Outlet />
@@ -38,17 +38,18 @@ function Layout() {
 
 function App() {
   return (
-    <div className="w-full min-h-screen bg-slate-300">
+    <div className="w-full min-h-screen bg-slate-200">
       <Header />
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/project" element={<Project />} />
           <Route path="/tasks" element={<Tasks />} />
-          <Route path="/completed/:status" element={<Tasks />} />
+          {/* <Route path="/completed/:status" element={<Tasks />} />
           <Route path="/inprogress/:status" element={<Tasks />} />
           <Route path="/todo/:status" element={<Tasks />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="/task/:id" element={<Task />} />
+          <Route path="/users" element={<Users />} /> */}
+          {/* <Route path="/task/:id" element={<Task />} /> */}
+          <Route path="/task" element={<Task />} />
         </Route>
 
         <Route path="/login" element={<Login />} />

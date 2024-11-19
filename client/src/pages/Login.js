@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import logo from "../assets/logo.png";
+
 import Textbox from "../components/Textbox";
 import Button from "../components/Button";
 import { useSelector, useDispatch } from "react-redux";
@@ -20,23 +20,14 @@ export default function Login() {
 
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   user && navigate("/dashboard");
-  // }, [user]);
-
   useEffect(() => {
     if (user) {
-      navigate("/dashboard");
+      navigate("/project");
     }
   }, [user, navigate]);
 
-  // const submitHandler = async (data) => {
-  //   console.log("submit");
-  // };
-  // console.log(user);
-
   const submitHandler = async (data) => {
-    // Пример логики аутентификации
+    // Authenticate user
     const fakeUser = { username: data.username, token: "fake-jwt-token" };
     dispatch(setCredentials(fakeUser));
     console.log("User authenticated:", fakeUser);
@@ -48,17 +39,12 @@ export default function Login() {
         {/* left side */}
         <div className="h-full w-full lg:w-2/3 flex flex-col items-center justify-center">
           <div className="w-full md:max-w-lg 2xl:max-w-3xl flex flex-col items-center justify-center gap-5 md:gap-y-10 2xl:-mt-20">
-            {/* <span className="flex gap-1 py-1 px-3 border rounded-full text-sm md:text-base boardergray-300 text-gray-500"> */}
             <span className="flex gap-1 py-1 px-3 border rounded-lg text-sm font-medium text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
               <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-600 rounded-md group-hover:bg-opacity-0">
                 Connect every team, task, and project together with TaskMan App!
               </span>
-              {/* Connect every team, task, and project together with TaskMan App! */}
             </span>
-            <p className="flex flex-col gap-0 md:gap-4 text-4xl md:text-6xl 2xl:text-7xl font-black text-center text-blue-800">
-              {/* <span>Cloud Based</span> */}
-              {/* <span>Task Management Project</span> */}
-            </p>
+            <p className="flex flex-col gap-0 md:gap-4 text-4xl md:text-6xl 2xl:text-7xl font-black text-center text-blue-800"></p>
             <div className="flex-1">
               <div className="font-bold dark:text-white text-7xl">
                 <span className="px-2 py-1 bg-gradient-to-tr from-indigo-800 via-purple-400 to-pink-400 rounded-md text-white">
@@ -66,15 +52,7 @@ export default function Login() {
                 </span>
                 <span className="text-gray-500">App</span>
               </div>
-              {/* <p className="text-sm mt-8">Task Management Project</p> */}
             </div>
-            {/* <div>
-              <img
-                src={logo}
-                alt="Logo"
-                className="w-28 h-32 md:w-40 md:h-48"
-              />
-            </div> */}
           </div>
         </div>
 
@@ -122,7 +100,6 @@ export default function Login() {
                 Forget Password?
               </span>
 
-              {/* Добавленный код */}
               <Button gradientDuoTone="purpleToBlue" type="submit">
                 Login
               </Button>
@@ -136,11 +113,6 @@ export default function Login() {
                   Register
                 </Link>
               </div>
-              {/* <Button
-                type="submit"
-                label="Submit"
-                className="w-full h-10 bg-blue-500 text-white rounded-full"
-              /> */}
             </div>
           </form>
         </div>

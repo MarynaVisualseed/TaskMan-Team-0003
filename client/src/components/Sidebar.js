@@ -3,7 +3,6 @@ import {
   MdDashboard,
   MdOutlineAddTask,
   MdOutlinePendingActions,
-  MdSettings,
   MdTaskAlt,
 } from "react-icons/md";
 import { FaTasks, FaTrashAlt, FaUsers } from "react-icons/fa";
@@ -15,8 +14,13 @@ import clsx from "clsx";
 
 const linkData = [
   {
-    label: "Dashboard",
-    link: "dashboard",
+    label: "Projects",
+    link: "projects",
+    icon: <MdOutlineAddTask />,
+  },
+  {
+    label: "Project",
+    link: "project",
     icon: <MdDashboard />,
   },
   {
@@ -24,32 +28,32 @@ const linkData = [
     link: "tasks",
     icon: <FaTasks />,
   },
-  {
-    label: "Completed",
-    link: "completed/completed",
-    icon: <MdTaskAlt />,
-  },
-  {
-    label: "In Progress",
-    link: "inprogress/inprogress",
-    icon: <MdOutlinePendingActions />,
-  },
-  {
-    label: "Todo",
-    link: "todo",
-    icon: <MdOutlineAddTask />,
-  },
+  // {
+  //   label: "Completed",
+  //   link: "completed/completed",
+  //   icon: <MdTaskAlt />,
+  // },
+  // {
+  //   label: "In Progress",
+  //   link: "inprogress/inprogress",
+  //   icon: <MdOutlinePendingActions />,
+  // },
+  // {
+  //   label: "Todo",
+  //   link: "todo",
+  //   icon: <MdOutlineAddTask />,
+  // },
   {
     label: "Users",
     link: "users",
     icon: <FaUsers />,
   },
 
-  {
-    label: "Trash",
-    link: "trash",
-    icon: <FaTrashAlt />,
-  },
+  // {
+  //   label: "Trash",
+  //   link: "trash",
+  //   icon: <FaTrashAlt />,
+  // },
 ];
 
 const Sidebar = () => {
@@ -73,12 +77,12 @@ const Sidebar = () => {
         to={el.link}
         onClick={closeSibebar}
         className={clsx(
-          "w-full lg:w-3/4 flex gap-2 px-3 py-2 rounded-full items-center text-gray-800 text-base hover:bg-blue-900",
-          path === el.link.split("/")[0] ? "bg-blue-700 text-white" : ""
+          "w-full lg:w-3/4 flex gap-2 px-3 py-2 rounded-md items-center text-gray-800 text-base hover:bg-teal-900",
+          path === el.link.split("/")[0] ? "bg-teal-500 text-white" : ""
         )}
       >
         {el.icon}
-        <span className="hover:text-blue-600">{el.label}</span>
+        <span className="hover:text-white">{el.label}</span>
       </Link>
     );
   };
@@ -86,7 +90,7 @@ const Sidebar = () => {
   return (
     <div className="w-full h-full flex flex-col gap-6 p-5">
       <h1 className="flex gap-1 items-center">
-        <p className="bg-blue-500 p-2 rounded-full">
+        <p className="bg-teal-500 p-2 rounded-full">
           <MdOutlineAddTask className="text-white text-2xl font-black" />
         </p>
         <span className="text-2xl font-bold text-black">TaskMe</span>

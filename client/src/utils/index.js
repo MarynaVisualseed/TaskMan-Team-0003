@@ -24,11 +24,21 @@ export function dateFormatter(dateString) {
   return formattedDate;
 }
 
-export default function getInitials(fullName) {
-  if (!fullName) return ""; // Добавьте проверку на undefined или пустую строку
+// export default function getInitials(fullName) {
+//   if (!fullName) return ""; // Добавьте проверку на undefined или пустую строку
+//   const names = fullName.split(" ");
+//   const initials = names.slice(0, 2).map((name) => name[0].toUpperCase());
+//   const initialsString = initials.join("");
+//   return initialsString;
+// }
+
+export function getInitials(fullName) {
   const names = fullName.split(" ");
+
   const initials = names.slice(0, 2).map((name) => name[0].toUpperCase());
+
   const initialsStr = initials.join("");
+
   return initialsStr;
 }
 
@@ -46,9 +56,9 @@ export const PRIOTITYSTYELS = {
 };
 
 export const TASK_TYPE = {
-  todo: "bg-blue-600",
-  "in progress": "bg-yellow-600",
-  completed: "bg-green-600",
+  todo: "bg-blue-500",
+  inprogress: "bg-yellow-400",
+  completed: "bg-teal-500",
 };
 
 export const BGS = [

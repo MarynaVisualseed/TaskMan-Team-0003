@@ -10,13 +10,13 @@ import { LuClipboardEdit } from "react-icons/lu";
 import { FaNewspaper, FaUsers } from "react-icons/fa";
 import { FaArrowsToDot } from "react-icons/fa6";
 import moment from "moment";
-import { summary } from "../assets/data";
+import { summary } from "../assets/data.js";
 import clsx from "clsx";
-import Chart from "../components/Chart";
+import Chart from "../components/Chart.js";
 import { BGS } from "../utils/index.js";
-import getInitials from "../utils/index.js";
+import { getInitials } from "../utils/index.js";
 import { PRIOTITYSTYELS } from "../utils/index.js";
-import UserInfo from "../components/UserInfo";
+import UserInfo from "../components/UserInfo.js";
 import { TASK_TYPE } from "../utils/index.js";
 
 const TaskTable = ({ tasks }) => {
@@ -150,7 +150,7 @@ const UserTable = ({ users }) => {
   );
 };
 
-export default function Dashboard() {
+export default function Project() {
   const totals = summary.tasks;
 
   const stats = [
@@ -171,7 +171,7 @@ export default function Dashboard() {
     {
       _id: "3",
       label: "TASK IN PROGRESS ",
-      total: totals["in progress"] || 0,
+      total: totals["inprogress"] || 0,
       icon: <LuClipboardEdit />,
       bg: "bg-[#f59e0b]",
     },

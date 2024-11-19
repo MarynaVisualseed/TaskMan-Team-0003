@@ -11,7 +11,7 @@ import { FaUser, FaUserLock } from "react-icons/fa";
 import { IoLogOutOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import getInitials from "../utils/index.js";
+import { getInitials } from "../utils/index.js";
 import clsx from "clsx";
 
 const UserAvatar = () => {
