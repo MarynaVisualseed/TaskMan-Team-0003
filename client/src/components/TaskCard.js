@@ -13,7 +13,7 @@ import { BiMessageAltDetail } from "react-icons/bi";
 import { FaList } from "react-icons/fa";
 import UserInfo from "./UserInfo";
 import { IoMdAdd } from "react-icons/io";
-// import AddSubTask from "./task/AddSubTask";
+import AddDetails from "./task/AddDetails";
 
 const ICONS = {
   high: <MdKeyboardDoubleArrowUp />,
@@ -24,6 +24,23 @@ const ICONS = {
 const TaskCard = ({ task }) => {
   const { user } = useSelector((state) => state.auth);
   const [open, setOpen] = useState(false);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpen(false);
+  };
+
+  // const handleOpenModal = () => {
+  //   setIsModalOpen(true);
+  // };
+
+  // const handleCloseModal = () => {
+  //   setIsModalOpen(false);
+  // };
 
   return (
     <>
@@ -38,8 +55,12 @@ const TaskCard = ({ task }) => {
             <span className="text-lg">{ICONS[task?.priority]}</span>
             <span className="uppercase">{task?.priority} Priority</span>
           </div>
-
-          {user?.isAdmin && <TaskDialog task={task} />}
+          {/* 
+          {user?.isAdmin && <TaskDialog task={task} />} */}
+          <TaskDialog key={task._id} task={task} />
+          {/* {user?.isAdmin && (
+            <TaskDialog task={task} onClose={handleCloseModal} />
+          )} */}
         </div>
 
         <>
@@ -67,7 +88,7 @@ const TaskCard = ({ task }) => {
             </div>
             <div className="flex gap-1 items-center text-sm text-gray-600 ">
               <FaList />
-              <span>0/{task?.subTasks?.length}</span>
+              <span>0/{task?.taskDetails?.length}</span>
             </div>
           </div>
 
@@ -87,42 +108,54 @@ const TaskCard = ({ task }) => {
         </div>
 
         {/* sub tasks */}
-        {task?.subTasks?.length > 0 ? (
+        {task?.taskDetails?.length > 0 ? (
           <div className="py-4 border-t border-gray-200">
             <h5 className="text-base line-clamp-1 text-black">
-              {task?.subTasks[0].title}
+              {task?.taskDetails[0].title}
             </h5>
 
             <div className="p-4 space-x-8">
               <span className="text-sm text-gray-600">
-                {formatDate(new Date(task?.subTasks[0]?.date))}
+                {formatDate(new Date(task?.taskDetails[0]?.date))}
               </span>
               <span className="bg-violet-600/10 px-3 py-1 rounded-md text-violet-700 font-medium">
-                {task?.subTasks[0].tag}
+                {task?.taskDetails[0].tag}
               </span>
             </div>
           </div>
         ) : (
           <>
             <div className="py-4 border-t border-gray-200">
-              <span className="text-gray-500">No Sub Task</span>
+              <span className="text-gray-500">No Task Details</span>
             </div>
           </>
         )}
 
         <div className="w-full pb-2">
-          <button
+          {/* Другие элементы TaskCard */}
+          <button onClick={handleOpenModal} className="btn-add-details">
+            <IoMdAdd className="text-lg" />
+            ADD DETAILS
+          </button>
+
+          {/* Модальное окно AddDetails */}
+          {/* {open && <AddDetails open={open} onClose={handleCloseModal} />} */}
+          {/* {isModalOpen && (
+            <AddDetails open={isModalOpen} onClose={handleCloseModal} />
+          )} */}
+          {/* <button
             onClick={() => setOpen(true)}
             disabled={user.isAdmin ? false : true}
-            className="w-full flex gap-4 items-center text-sm text-gray-500 font-semibold disabled:cursor-not-allowed disabled::text-gray-300"
+            // className="w-full flex gap-4 items-center text-sm text-gray-500 font-semibold disabled:cursor-not-allowed disabled::text-gray-300"
+            className="w-full flex gap-4 items-center text-sm text-gray-500 font-semibold"
           >
             <IoMdAdd className="text-lg" />
             <span>ADD DETAILS</span>
-          </button>
+          </button> */}
         </div>
       </div>
 
-      {/* <AddSubTask open={open} setOpen={setOpen} id={task._id} /> */}
+      <AddDetails open={open} setOpen={setOpen} id={task._id} />
     </>
   );
 };

@@ -5,7 +5,7 @@ import {
   MdKeyboardArrowDown,
 } from "react-icons/md";
 import { useState } from "react";
-import { toast } from "sonner";
+
 import clsx from "clsx";
 import { BiMessageAltDetail } from "react-icons/bi";
 import { MdAttachFile } from "react-icons/md";
@@ -87,7 +87,7 @@ const Table = ({ task }) => {
           </div>
           <div className="flex gap-1 items-center text-sm text-gray-600 dark:text-gray-400">
             <FaList />
-            <span>0/{task?.subTasks?.length}</span>
+            <span>0/{task?.taskDetails?.length}</span>
           </div>
         </div>
       </td>
@@ -109,14 +109,10 @@ const Table = ({ task }) => {
       </td>
 
       <td className="py-2 flex gap-2 md:gap-4 justify-end">
-        <Button
-          className="text-blue-600 hover:text-blue-500 sm:px-0 text-sm md:text-base"
-          label="Edit"
-          type="button"
-        />
+        <Button className="button-edit" label="Edit" type="button" />
 
         <Button
-          className="text-red-700 hover:text-red-500 sm:px-0 text-sm md:text-base"
+          className="button-delete"
           label="Delete"
           type="button"
           onClick={() => deleteClicks(task._id)}
@@ -139,13 +135,6 @@ const Table = ({ task }) => {
           </table>
         </div>
       </div>
-
-      {/* TODO */}
-      {/* <ConfirmatioDialog
-        open={openDialog}
-        setOpen={setOpenDialog}
-        onClick={deleteHandler}
-      /> */}
     </>
   );
 };

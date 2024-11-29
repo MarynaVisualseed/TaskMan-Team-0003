@@ -9,7 +9,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setCredentials } from "../redux/slices/authSlice";
 import { Link } from "react-router-dom";
 
-export default function Login() {
+export default function Register() {
   const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const {
@@ -27,9 +27,13 @@ export default function Login() {
   }, [user, navigate]);
 
   const submitHandler = async (data) => {
-    const fakeUser = { username: data.username, token: "fake-jwt-token" };
+    const fakeUser = {
+      username: data.username,
+      email: data.email,
+      token: "fake-jwt-token",
+    };
     dispatch(setCredentials(fakeUser));
-    console.log("User authenticated:", fakeUser);
+    console.log("User registered:", fakeUser);
   };
 
   return (
@@ -40,7 +44,7 @@ export default function Login() {
           <div className="w-full md:max-w-lg 2xl:max-w-3xl flex flex-col items-center justify-center gap-5 md:gap-y-10 2xl:-mt-20">
             <span className="flex gap-1 py-1 px-3 border rounded-lg text-sm font-medium text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
               <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-600 rounded-md group-hover:bg-opacity-0">
-                Connect every team, task, and project together with TaskMan App!
+                Join TaskMan App and manage your tasks efficiently!
               </span>
             </span>
             <p className="flex flex-col gap-0 md:gap-4 text-4xl md:text-6xl 2xl:text-7xl font-black text-center text-blue-800"></p>
@@ -63,15 +67,26 @@ export default function Login() {
           >
             <div className="">
               <p className="text-blue-700 text-3xl font-bold text-center">
-                Welcome back!
+                Welcome!
               </p>
 
               <p className=" text-center text-base text-gray-800">
-                Keep your credentials safe
+                Create a secure password to protect your account
               </p>
             </div>
 
             <div className="flex flex-col gap-y-5">
+              <Textbox
+                placeholder="Your username"
+                type="text"
+                label="Username"
+                name="username"
+                className="w-full rounded-s-md"
+                register={register("username", {
+                  required: "Username is required",
+                })}
+                error={errors.username ? errors.username.message : ""}
+              />
               <Textbox
                 placeholder="Your email"
                 type="email"
@@ -94,26 +109,28 @@ export default function Login() {
                 })}
                 error={errors.password ? errors.password.message : ""}
               />
+              <Textbox
+                placeholder="Confirm Password"
+                type="password"
+                name="confirmPassword"
+                label="Confirm Password"
+                className="w-full rounded-s-md"
+                register={register("confirmPassword", {
+                  required: "Confirm Password  is required",
+                })}
+                error={
+                  errors.confirmPassword ? errors.confirmPassword.message : ""
+                }
+              />
 
-              <span className="text-sm text-gray-500 hover:text-blue-600 hover:underline cursor-pointer">
-                Forget Password?
-              </span>
+              <Button gradientDuoTone="purpleToBlue" type="submit">
+                Register
+              </Button>
 
-              <Button
-                gradientDuoTone="purpleToBlue"
-                type="submit"
-                style={{ textAlign: "center" }}
-              >
-                Login
-              </Button>
-              <div className="self-center">---- Or sign up with ----</div>
-              <Button gradientDuoTone="purpleToPink" type="submit">
-                Google
-              </Button>
               <div className="flex gap-1 text-sm mt-3">
-                <span>Trying to TaskMan?</span>
-                <Link to="/register" className="text-blue-800">
-                  Register
+                <span>Already have an account? </span>
+                <Link to="/login" className="text-blue-800">
+                  Login
                 </Link>
               </div>
             </div>

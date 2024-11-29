@@ -15,15 +15,8 @@ import { Transition } from "@headlessui/react";
 import { useEffect } from "react";
 
 const UserList = ({ setTeam, team }) => {
-  // const data = summary.users;
   const data = summary.users || []; // changed
   const [selectedUsers, setSelectedUsers] = useState([]);
-
-  // const handleChange = (el) => {
-  //   setSelectedUsers(el);
-  //   // setTeam(el?.map((u) => u.id));
-  //   setTeam(el?.filter((u) => u && u.id).map((u) => u.id)); // changed
-  // };
 
   const handleChange = (el) => {
     if (Array.isArray(el)) {
@@ -31,21 +24,6 @@ const UserList = ({ setTeam, team }) => {
       setTeam(el.filter((u) => u && u.id).map((u) => u.id));
     }
   };
-
-  // useEffect(() => {
-  //   if (team?.length < 1) {
-  //     data && setSelectedUsers([data[0]]);
-  //   } else {
-  //     setSelectedUsers(team);
-  //   }
-  // }, []);
-  // useEffect(() => {
-  //   if (team?.length < 1) {
-  //     data && setSelectedUsers([data[0]]);
-  //   } else {
-  //     setSelectedUsers(team);
-  //   }
-  // }, [team, data]);
 
   useEffect(() => {
     if (team?.length < 1) {
@@ -58,21 +36,14 @@ const UserList = ({ setTeam, team }) => {
   return (
     <div>
       <p className="text-gray-700">Task Assinged To: </p>
-      <Listbox value={selectedUsers} onChange={handleChange} multiple>
-        {/* <Listbox
-        value={selectedUsers}
-        onChange={(el) => handleChange(el)}
-        multiple
-      > */}
+      <Listbox value={selectedUsers} onChange={setSelectedUsers} multiple>
         <div className="relative mt-1">
           <ListboxButton className="relative w-full cursor-default rounded bg-white pl-3 pr-10 text-left px-3 py-2.5 2xl:py-3 border border-gray-300 sm:text-sm">
             <span className="block truncate">
-              {/* {selectedUsers?.map((user) => user.name).join(", ")} */}
               {selectedUsers
                 ?.filter((user) => user)
                 .map((user) => user.name)
                 .join(", ")}{" "}
-              {/* changed */}
             </span>
 
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
@@ -90,7 +61,6 @@ const UserList = ({ setTeam, team }) => {
             leaveTo="opacity-0"
           >
             <ListboxOptions className="z-50 absolute mt-1 max-h-60 w-5/6 overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
-              {/* {data?.map((user, index) => ( */}
               {data
                 ?.filter((user) => user)
                 .map((user, index) => (
@@ -125,11 +95,6 @@ const UserList = ({ setTeam, team }) => {
                             <MdCheck className="h-5 w-5" aria-hidden="true" />
                           </span>
                         )}
-                        {/* {selected ? (
-                        <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
-                          <MdCheck className="h-5 w-5" aria-hidden="true" />
-                        </span>
-                      ) : null} */}
                       </>
                     )}
                   </ListboxOption>

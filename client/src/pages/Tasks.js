@@ -31,7 +31,7 @@ export default function Tasks() {
 
   const [selected, setSelected] = useState(0);
   const [open, setOpen] = useState(false);
-  const [load, setLoad] = useState(false);
+  const [load] = useState(false);
 
   const status = params.status || "";
 
@@ -58,10 +58,6 @@ export default function Tasks() {
             <FaPlus className="text-lg mr-2" />
             ADD TASK
           </Button>
-
-          // label="Add Task"
-          // icon={<FaPlus className="text-lg" />}
-          // className="flex flex-row-reverse gap-2 items-center text-white rounded-md py-2 2xl:py-3"
         )}
       </div>
       <Tabs tabs={TABS} setSelected={setSelected}>

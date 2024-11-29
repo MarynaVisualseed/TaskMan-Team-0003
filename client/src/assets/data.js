@@ -4,10 +4,13 @@ export const summary = {
     {
       _id: "65c5f12ab5204a81bde866a9",
       title: "Test task",
-      date: "2024-02-09T00:00:00.000Z",
+      date: "2024-11-08T00:00:00.000Z",
       priority: "high",
       stage: "todo",
-      assets: [],
+      assets: [
+        "https://firebasestorage.googleapis.com/v0/b/taskmanager-557d7.appspot.com/o/1707471138863original-a005132062ca5bafc505c4c74f0e1865.jpg?alt=media&token=55f909f2-7f05-42f3-af4f-dc7f87cdea1d",
+        "https://firebasestorage.googleapis.com/v0/b/taskmanager-557d7.appspot.com/o/1707471144712PsZch9E1_400x400.jpg?alt=media&token=7ce62c7e-c240-4032-83c6-bb6c9cdc0d4b",
+      ],
       team: [
         {
           _id: "65c202d4aa62f32ffd1303cc",
@@ -33,24 +36,24 @@ export const summary = {
       ],
       isTrashed: false,
       activities: [],
-      subTasks: [
+      taskDetails: [
         {
           title: "Task manager youtube tutorial",
-          date: "2024-02-09T00:00:00.000Z",
+          date: "2024-11-08T00:00:00.000Z",
           tag: "tutorial",
           _id: "65c5f153b5204a81bde866c8",
         },
       ],
-      createdAt: "2024-02-09T09:32:26.574Z",
-      updatedAt: "2024-02-09T09:36:53.339Z",
+      createdAt: "2024-11-08T09:32:26.574Z",
+      updatedAt: "2024-11-08T09:36:53.339Z",
       __v: 1,
     },
     {
       _id: "65c5d547660756f6fd453a7a",
       title: "Duplicate - Duplicate - Review Code Changes",
-      date: "2024-02-09T00:00:00.000Z",
+      date: "2024-11-08T00:00:00.000Z",
       priority: "medium",
-      stage: "in progress",
+      stage: "inprogress",
       assets: [],
       team: [
         {
@@ -71,28 +74,28 @@ export const summary = {
       isTrashed: false,
       activities: [
         {
-          type: "started",
+          type: "started ",
           activity: "Project started",
-          date: "2024-02-09T09:16:56.623Z",
+          date: "2024-11-08T09:16:56.623Z",
           by: "65c202d4aa62f32ffd1303cc",
           _id: "65c5f18bb5204a81bde866d1",
         },
         {
           type: "commented",
           activity: "i like coding!!",
-          date: "2024-02-09T09:16:56.623Z",
+          date: "2024-11-08T09:16:56.623Z",
           by: "65c202d4aa62f32ffd1303cc",
           _id: "65c5f19eb5204a81bde866dd",
         },
         {
           type: "bug",
           activity: "bug found",
-          date: "2024-02-09T09:16:56.623Z",
+          date: "2024-11-08T09:16:56.623Z",
           by: "65c202d4aa62f32ffd1303cc",
           _id: "65c5f1abb5204a81bde866eb",
         },
       ],
-      subTasks: [
+      taskDetails: [
         {
           title: "Blog App Admin Dashboard",
           date: "2024-02-08T00:00:00.000Z",
@@ -100,8 +103,8 @@ export const summary = {
           _id: "65c3535476ed5c48f9440973",
         },
       ],
-      createdAt: "2024-02-09T07:33:27.590Z",
-      updatedAt: "2024-02-09T09:36:10.386Z",
+      createdAt: "2024-11-08T07:33:27.590Z",
+      updatedAt: "2024-11-08T09:36:10.386Z",
       __v: 4,
     },
     {
@@ -110,7 +113,11 @@ export const summary = {
       date: "2024-02-07T00:00:00.000Z",
       priority: "high",
       stage: "todo",
-      assets: [],
+      assets: [
+        "https://firebasestorage.googleapis.com/v0/b/taskmanager-557d7.appspot.com/o/1707410130023hand-holding-writing-checklist-application-form-document-clipboard-white-background-3d-illustration.jpg?alt=media&token=08de4848-517f-48ca-a9b4-624744d5ddb0",
+        "https://firebasestorage.googleapis.com/v0/b/taskmanager-557d7.appspot.com/o/1707412301523image_processing20220706-26930-ktfgon.png?alt=media&token=6cd185c1-9fc3-4f52-bb0b-0d4a29e65b85",
+        "https://firebasestorage.googleapis.com/v0/b/taskmanager-557d7.appspot.com/o/1707412306237image_processing20220706-11953-1f826f4.png?alt=media&token=7270475f-a994-41fd-8ae6-62e00f72b0b3",
+      ],
       team: [
         {
           _id: "65c202d4aa62f32ffd1303cc",
@@ -144,7 +151,7 @@ export const summary = {
           _id: "65c5188be1585cfa650b79c4",
         },
         {
-          type: "in progress",
+          type: "inprogress",
           activity: "Project is progress. Hiope to fin=ish soon!!",
           date: "2024-02-08T17:55:34.353Z",
           by: "65c202d4aa62f32ffd1303cc",
@@ -165,7 +172,7 @@ export const summary = {
           _id: "65c51af08064df97d208b3b0",
         },
       ],
-      subTasks: [
+      taskDetails: [
         {
           title: "Blog App Dashboard",
           date: "2024-02-06T00:00:00.000Z",
@@ -180,16 +187,19 @@ export const summary = {
         },
       ],
       createdAt: "2024-02-08T05:01:26.983Z",
-      updatedAt: "2024-02-09T06:51:15.005Z",
+      updatedAt: "2024-11-08T06:51:15.005Z",
       __v: 8,
     },
     {
       _id: "65c45fb6af6ec0118be94052",
-      title: "Task Manager Youtube Video",
+      title: "Task Manager Video",
       date: "2024-02-11T00:00:00.000Z",
       priority: "medium",
       stage: "completed",
-      assets: [],
+      assets: [
+        "https://firebasestorage.googleapis.com/v0/b/taskmanager-557d7.appspot.com/o/1707412043078report.jpg?alt=media&token=41d02b42-c25c-4fbb-90a9-340a45f4bbe1",
+        "https://firebasestorage.googleapis.com/v0/b/taskmanager-557d7.appspot.com/o/1707412052287hand-holding-writing-checklist-application-form-document-clipboard-white-background-3d-illustration.jpg?alt=media&token=98b360b4-954c-47e3-8283-8228a54a327c",
+      ],
       team: [
         {
           _id: "65c317360fd860f958baa08e",
@@ -216,7 +226,7 @@ export const summary = {
           _id: "65c51b998064df97d208b3f9",
         },
       ],
-      subTasks: [
+      taskDetails: [
         {
           title: "Blog App Admin Dashboard",
           date: "2024-02-08T00:00:00.000Z",
@@ -225,7 +235,7 @@ export const summary = {
         },
       ],
       createdAt: "2024-02-08T04:59:34.826Z",
-      updatedAt: "2024-02-09T06:51:15.005Z",
+      updatedAt: "2024-11-08T06:51:15.005Z",
       __v: 3,
     },
     {
@@ -234,7 +244,13 @@ export const summary = {
       date: "2024-02-07T00:00:00.000Z",
       priority: "high",
       stage: "todo",
-      assets: [],
+      assets: [
+        "https://firebasestorage.googleapis.com/v0/b/taskmanager-557d7.appspot.com/o/1707412457946Wed%20Dev%20Course.png?alt=media&token=028416bf-88c6-4738-9a5a-d90e6d53b202",
+        "https://firebasestorage.googleapis.com/v0/b/taskmanager-557d7.appspot.com/o/1707412466672original-380755132e03e80a9fa3ef1203219cf3.png?alt=media&token=10d96b0d-feea-4627-aa1e-9b8f87cf7500",
+        "https://firebasestorage.googleapis.com/v0/b/taskmanager-557d7.appspot.com/o/1707412469358original-a738b8d0cbced29ae8609072d006fbcb.jpg?alt=media&token=9a6cc56f-63ff-4405-b978-d962c3c1f1d0",
+        "https://firebasestorage.googleapis.com/v0/b/taskmanager-557d7.appspot.com/o/1707412472346cosial.png?alt=media&token=b6e427b3-bc36-4fa2-a8f9-438f9ebf93e2",
+        "https://firebasestorage.googleapis.com/v0/b/taskmanager-557d7.appspot.com/o/1707412478590original-a005132062ca5bafc505c4c74f0e1865.jpg?alt=media&token=e81047bd-a1e2-49e5-85f5-feda31c423f2",
+      ],
       team: [
         {
           _id: "65c30b96e639681a13def0b5",
@@ -268,7 +284,7 @@ export const summary = {
           _id: "65c51b678064df97d208b3d6",
         },
       ],
-      subTasks: [
+      taskDetails: [
         {
           title: "Check Login code and fix bugs asap",
           date: "2024-02-08T00:00:00.000Z",
@@ -277,7 +293,7 @@ export const summary = {
         },
       ],
       createdAt: "2024-02-08T04:28:31.966Z",
-      updatedAt: "2024-02-09T06:51:15.005Z",
+      updatedAt: "2024-11-08T06:51:15.005Z",
       __v: 3,
     },
     {
@@ -312,7 +328,7 @@ export const summary = {
       ],
       isTrashed: false,
       activities: [],
-      subTasks: [
+      taskDetails: [
         {
           title: "Blog App Dashboard",
           date: "2024-02-06T00:00:00.000Z",
@@ -327,7 +343,7 @@ export const summary = {
         },
       ],
       createdAt: "2024-02-07T17:56:39.969Z",
-      updatedAt: "2024-02-09T06:51:15.005Z",
+      updatedAt: "2024-11-08T06:51:15.005Z",
       __v: 1,
     },
     {
@@ -335,7 +351,7 @@ export const summary = {
       title: "Duplicate - Review Code Changes",
       date: "2024-02-07T17:55:13.218Z",
       priority: "medium",
-      stage: "in progress",
+      stage: "inprogress",
       assets: [],
       team: [
         {
@@ -355,7 +371,7 @@ export const summary = {
       ],
       isTrashed: false,
       activities: [],
-      subTasks: [
+      taskDetails: [
         {
           title: "Blog App Admin Dashboard",
           date: "2024-02-08T00:00:00.000Z",
@@ -399,7 +415,7 @@ export const summary = {
       ],
       isTrashed: false,
       activities: [],
-      subTasks: [
+      taskDetails: [
         {
           title: "Blog App Dashboard",
           date: "2024-02-06T00:00:00.000Z",
@@ -422,7 +438,7 @@ export const summary = {
       title: "Review Code Changes",
       date: "2024-02-05T00:00:00.000Z",
       priority: "medium",
-      stage: "in progress",
+      stage: "inprogress",
       assets: [],
       team: [
         {
@@ -442,7 +458,7 @@ export const summary = {
       ],
       isTrashed: false,
       activities: [],
-      subTasks: [
+      taskDetails: [
         {
           title: "Blog App Admin Dashboard",
           date: "2024-02-08T00:00:00.000Z",
@@ -486,7 +502,7 @@ export const summary = {
       ],
       isTrashed: false,
       activities: [],
-      subTasks: [
+      taskDetails: [
         {
           title: "Blog App Dashboard",
           date: "2024-02-06T00:00:00.000Z",
@@ -512,7 +528,7 @@ export const summary = {
       title: "Backend Developer",
       role: "Developer",
       isActive: true,
-      createdAt: "2024-02-09T09:38:07.765Z",
+      createdAt: "2024-11-08T09:38:07.765Z",
     },
     {
       _id: "65c3176a0fd860f958baa099",
@@ -549,7 +565,7 @@ export const summary = {
   ],
   tasks: {
     todo: 6,
-    "in progress": 3,
+    inprogress: 3,
     completed: 1,
   },
 };
@@ -577,10 +593,13 @@ export const tasks = [
   {
     _id: "65c5f12ab5204a81bde866a9",
     title: "Test task",
-    date: "2024-02-09T00:00:00.000Z",
+    date: "2024-11-08T00:00:00.000Z",
     priority: "high",
     stage: "todo",
-    assets: [],
+    assets: [
+      "https://firebasestorage.googleapis.com/v0/b/taskmanager-557d7.appspot.com/o/1707471138863original-a005132062ca5bafc505c4c74f0e1865.jpg?alt=media&token=55f909f2-7f05-42f3-af4f-dc7f87cdea1d",
+      "https://firebasestorage.googleapis.com/v0/b/taskmanager-557d7.appspot.com/o/1707471144712PsZch9E1_400x400.jpg?alt=media&token=7ce62c7e-c240-4032-83c6-bb6c9cdc0d4b",
+    ],
     team: [
       {
         _id: "65c202d4aa62f32ffd1303cc",
@@ -603,24 +622,24 @@ export const tasks = [
     ],
     isTrashed: false,
     activities: [],
-    subTasks: [
+    taskDetails: [
       {
         title: "Task manager youtube tutorial",
-        date: "2024-02-09T00:00:00.000Z",
+        date: "2024-11-08T00:00:00.000Z",
         tag: "tutorial",
         _id: "65c5f153b5204a81bde866c8",
       },
     ],
-    createdAt: "2024-02-09T09:32:26.574Z",
-    updatedAt: "2024-02-09T09:36:53.339Z",
+    createdAt: "2024-11-08T09:32:26.574Z",
+    updatedAt: "2024-11-08T09:36:53.339Z",
     __v: 1,
   },
   {
     _id: "65c5d547660756f6fd453a7a",
     title: "Duplicate - Duplicate - Review Code Changes",
-    date: "2024-02-09T00:00:00.000Z",
+    date: "2024-11-08T00:00:00.000Z",
     priority: "medium",
-    stage: "in progress",
+    stage: "inprogress",
     assets: [],
     team: [
       {
@@ -639,28 +658,28 @@ export const tasks = [
     isTrashed: false,
     activities: [
       {
-        type: "started",
+        type: "started ",
         activity: "Project started",
-        date: "2024-02-09T09:16:56.623Z",
+        date: "2024-11-08T09:16:56.623Z",
         by: "65c202d4aa62f32ffd1303cc",
         _id: "65c5f18bb5204a81bde866d1",
       },
       {
         type: "commented",
         activity: "i like coding!!",
-        date: "2024-02-09T09:16:56.623Z",
+        date: "2024-11-08T09:16:56.623Z",
         by: "65c202d4aa62f32ffd1303cc",
         _id: "65c5f19eb5204a81bde866dd",
       },
       {
         type: "bug",
         activity: "bug found",
-        date: "2024-02-09T09:16:56.623Z",
+        date: "2024-11-08T09:16:56.623Z",
         by: "65c202d4aa62f32ffd1303cc",
         _id: "65c5f1abb5204a81bde866eb",
       },
     ],
-    subTasks: [
+    taskDetails: [
       {
         title: "Blog App Admin Dashboard",
         date: "2024-02-08T00:00:00.000Z",
@@ -668,8 +687,8 @@ export const tasks = [
         _id: "65c3535476ed5c48f9440973",
       },
     ],
-    createdAt: "2024-02-09T07:33:27.590Z",
-    updatedAt: "2024-02-09T09:36:10.386Z",
+    createdAt: "2024-11-08T07:33:27.590Z",
+    updatedAt: "2024-11-08T09:36:10.386Z",
     __v: 4,
   },
   {
@@ -678,7 +697,11 @@ export const tasks = [
     date: "2024-02-07T00:00:00.000Z",
     priority: "high",
     stage: "todo",
-    assets: [],
+    assets: [
+      "https://firebasestorage.googleapis.com/v0/b/taskmanager-557d7.appspot.com/o/1707410130023hand-holding-writing-checklist-application-form-document-clipboard-white-background-3d-illustration.jpg?alt=media&token=08de4848-517f-48ca-a9b4-624744d5ddb0",
+      "https://firebasestorage.googleapis.com/v0/b/taskmanager-557d7.appspot.com/o/1707412301523image_processing20220706-26930-ktfgon.png?alt=media&token=6cd185c1-9fc3-4f52-bb0b-0d4a29e65b85",
+      "https://firebasestorage.googleapis.com/v0/b/taskmanager-557d7.appspot.com/o/1707412306237image_processing20220706-11953-1f826f4.png?alt=media&token=7270475f-a994-41fd-8ae6-62e00f72b0b3",
+    ],
     team: [
       {
         _id: "65c202d4aa62f32ffd1303cc",
@@ -709,7 +732,7 @@ export const tasks = [
         _id: "65c5188be1585cfa650b79c4",
       },
       {
-        type: "in progress",
+        type: "inprogress",
         activity: "Project is progress. Hiope to fin=ish soon!!",
         date: "2024-02-08T17:55:34.353Z",
         by: "65c202d4aa62f32ffd1303cc",
@@ -730,7 +753,7 @@ export const tasks = [
         _id: "65c51af08064df97d208b3b0",
       },
     ],
-    subTasks: [
+    taskDetails: [
       {
         title: "Blog App Dashboard",
         date: "2024-02-06T00:00:00.000Z",
@@ -745,16 +768,19 @@ export const tasks = [
       },
     ],
     createdAt: "2024-02-08T05:01:26.983Z",
-    updatedAt: "2024-02-09T06:51:15.005Z",
+    updatedAt: "2024-11-08T06:51:15.005Z",
     __v: 8,
   },
   {
     _id: "65c45fb6af6ec0118be94052",
-    title: "Task Manager Youtube Video",
+    title: "Task Manager App",
     date: "2024-02-11T00:00:00.000Z",
     priority: "medium",
     stage: "completed",
-    assets: [],
+    assets: [
+      "https://firebasestorage.googleapis.com/v0/b/taskmanager-557d7.appspot.com/o/1707412043078report.jpg?alt=media&token=41d02b42-c25c-4fbb-90a9-340a45f4bbe1",
+      "https://firebasestorage.googleapis.com/v0/b/taskmanager-557d7.appspot.com/o/1707412052287hand-holding-writing-checklist-application-form-document-clipboard-white-background-3d-illustration.jpg?alt=media&token=98b360b4-954c-47e3-8283-8228a54a327c",
+    ],
     team: [
       {
         _id: "65c317360fd860f958baa08e",
@@ -793,7 +819,7 @@ export const tasks = [
         _id: "65c51b998064df97d208b3f9",
       },
     ],
-    subTasks: [
+    taskDetails: [
       {
         title: "Blog App Admin Dashboard",
         date: "2024-02-08T00:00:00.000Z",
@@ -802,7 +828,7 @@ export const tasks = [
       },
     ],
     createdAt: "2024-02-08T04:59:34.826Z",
-    updatedAt: "2024-02-09T06:51:15.005Z",
+    updatedAt: "2024-11-08T06:51:15.005Z",
     __v: 3,
   },
   {
@@ -811,7 +837,13 @@ export const tasks = [
     date: "2024-02-07T00:00:00.000Z",
     priority: "high",
     stage: "todo",
-    assets: [],
+    assets: [
+      "https://firebasestorage.googleapis.com/v0/b/taskmanager-557d7.appspot.com/o/1707412457946Wed%20Dev%20Course.png?alt=media&token=028416bf-88c6-4738-9a5a-d90e6d53b202",
+      "https://firebasestorage.googleapis.com/v0/b/taskmanager-557d7.appspot.com/o/1707412466672original-380755132e03e80a9fa3ef1203219cf3.png?alt=media&token=10d96b0d-feea-4627-aa1e-9b8f87cf7500",
+      "https://firebasestorage.googleapis.com/v0/b/taskmanager-557d7.appspot.com/o/1707412469358original-a738b8d0cbced29ae8609072d006fbcb.jpg?alt=media&token=9a6cc56f-63ff-4405-b978-d962c3c1f1d0",
+      "https://firebasestorage.googleapis.com/v0/b/taskmanager-557d7.appspot.com/o/1707412472346cosial.png?alt=media&token=b6e427b3-bc36-4fa2-a8f9-438f9ebf93e2",
+      "https://firebasestorage.googleapis.com/v0/b/taskmanager-557d7.appspot.com/o/1707412478590original-a005132062ca5bafc505c4c74f0e1865.jpg?alt=media&token=e81047bd-a1e2-49e5-85f5-feda31c423f2",
+    ],
     team: [
       {
         _id: "65c30b96e639681a13def0b5",
@@ -842,7 +874,7 @@ export const tasks = [
         _id: "65c51b678064df97d208b3d6",
       },
     ],
-    subTasks: [
+    taskDetails: [
       {
         title: "Check Login code and fix bugs asap",
         date: "2024-02-08T00:00:00.000Z",
@@ -851,7 +883,7 @@ export const tasks = [
       },
     ],
     createdAt: "2024-02-08T04:28:31.966Z",
-    updatedAt: "2024-02-09T06:51:15.005Z",
+    updatedAt: "2024-11-08T06:51:15.005Z",
     __v: 3,
   },
   {
@@ -883,7 +915,7 @@ export const tasks = [
     ],
     isTrashed: false,
     activities: [],
-    subTasks: [
+    taskDetails: [
       {
         title: "Blog App Dashboard",
         date: "2024-02-06T00:00:00.000Z",
@@ -898,7 +930,7 @@ export const tasks = [
       },
     ],
     createdAt: "2024-02-07T17:56:39.969Z",
-    updatedAt: "2024-02-09T06:51:15.005Z",
+    updatedAt: "2024-11-08T06:51:15.005Z",
     __v: 1,
   },
   {
@@ -906,7 +938,7 @@ export const tasks = [
     title: "Duplicate - Review Code Changes",
     date: "2024-02-07T17:55:13.218Z",
     priority: "medium",
-    stage: "in progress",
+    stage: "inprogress",
     assets: [],
     team: [
       {
@@ -924,7 +956,7 @@ export const tasks = [
     ],
     isTrashed: false,
     activities: [],
-    subTasks: [
+    taskDetails: [
       {
         title: "Blog App Admin Dashboard",
         date: "2024-02-08T00:00:00.000Z",
@@ -965,7 +997,7 @@ export const tasks = [
     ],
     isTrashed: false,
     activities: [],
-    subTasks: [
+    taskDetails: [
       {
         title: "Blog App Dashboard",
         date: "2024-02-06T00:00:00.000Z",
@@ -988,7 +1020,7 @@ export const tasks = [
     title: "Review Code Changes",
     date: "2024-02-05T00:00:00.000Z",
     priority: "medium",
-    stage: "in progress",
+    stage: "inprogress",
     assets: [],
     team: [
       {
@@ -1006,7 +1038,7 @@ export const tasks = [
     ],
     isTrashed: false,
     activities: [],
-    subTasks: [
+    taskDetails: [
       {
         title: "Blog App Admin Dashboard",
         date: "2024-02-08T00:00:00.000Z",
@@ -1047,7 +1079,7 @@ export const tasks = [
     ],
     isTrashed: false,
     activities: [],
-    subTasks: [
+    taskDetails: [
       {
         title: "Blog App Dashboard",
         date: "2024-02-06T00:00:00.000Z",
@@ -1107,7 +1139,7 @@ export const activitiesData = [
 
   {
     _id: "3",
-    type: "in progress",
+    type: "inprogress",
     activity:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt nunc ipsum.",
     date: new Date("2024-01-15").toISOString(),

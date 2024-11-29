@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import moment from "moment";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaBug, FaTasks, FaThumbsUp, FaUser } from "react-icons/fa";
 import { GrInProgress } from "react-icons/gr";
 import {
@@ -14,7 +14,7 @@ import {
 } from "react-icons/md";
 import { RxActivityLog } from "react-icons/rx";
 import { useParams } from "react-router-dom";
-import { toast } from "sonner";
+
 import { tasks } from "../assets/data";
 import Tabs from "../components/Tabs";
 import { PRIOTITYSTYELS, TASK_TYPE } from "../utils/index.js";
@@ -22,12 +22,12 @@ import Button from "../components/Button";
 import { getInitials } from "../utils/index.js";
 import Loader from "../components/Loader";
 
-const assets = [
-  "https://images.pexels.com/photos/2418664/pexels-photo-2418664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  "https://images.pexels.com/photos/8797307/pexels-photo-8797307.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  "https://images.pexels.com/photos/2534523/pexels-photo-2534523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  "https://images.pexels.com/photos/804049/pexels-photo-804049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-];
+// const assets = [
+//   "https://images.pexels.com/photos/2418664/pexels-photo-2418664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+//   "https://images.pexels.com/photos/8797307/pexels-photo-8797307.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+//   "https://images.pexels.com/photos/2534523/pexels-photo-2534523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+//   "https://images.pexels.com/photos/804049/pexels-photo-804049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+// ];
 
 const ICONS = {
   high: <MdKeyboardDoubleArrowUp />,
@@ -93,7 +93,17 @@ const Task = () => {
 
   const [selected, setSelected] = useState(0);
   const [description, setDescription] = useState("");
-  const task = tasks[3];
+  // const task = tasks[3];
+  const [task, setTask] = useState(null);
+
+  useEffect(() => {
+    const foundTask = tasks.find((task) => task._id === id);
+    setTask(foundTask);
+  }, [id]);
+
+  if (!task) {
+    return <div>Loading...</div>;
+  }
 
   const handleDescriptionChange = (e) => {
     setDescription(e.target.value);
@@ -146,7 +156,7 @@ const Task = () => {
 
                   <div className="space-x-2">
                     <span className="font-semibold">Task Details:</span>
-                    <span>{task?.subTasks?.length}</span>
+                    <span>{task?.taskDetails?.length}</span>
                   </div>
                 </div>
 
@@ -184,7 +194,7 @@ const Task = () => {
                     TASK DETAILS
                   </p>
                   <div className="space-y-8">
-                    {task?.subTasks?.map((el, index) => (
+                    {task?.taskDetails?.map((el, index) => (
                       <div key={index} className="flex gap-3">
                         <div className="w-10 h-10 flex items-center justify-center rounded-full bg-violet-50-200">
                           <MdTaskAlt className="text-violet-600" size={26} />
@@ -201,7 +211,6 @@ const Task = () => {
                             </span>
                           </div>
 
-                          {/* <p className="text-gray-700">{el?.title}</p> */}
                           <p className="text-gray-700">{task?.title}</p>
                         </div>
                       </div>

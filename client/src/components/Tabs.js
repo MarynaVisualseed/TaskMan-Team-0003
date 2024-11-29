@@ -23,7 +23,6 @@ const Tabs = ({ tabs, setSelected, children }) => {
                     ? "text-blue-700  border-b-2 border-blue-600"
                     : "text-gray-800  hover:text-blue-800"
                   // ? "bg-gradient-to-tr from-indigo-800 via-purple-400 to-pink-400 text-white"
-                  // : "text-gray-500 px-3 py-2 rounded-lg text-sm font-medium"
                 )
               }
             >

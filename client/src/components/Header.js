@@ -1,10 +1,16 @@
 import React from "react";
-import { Navbar, TextInput, Button } from "flowbite-react";
+import { Navbar, TextInput } from "flowbite-react";
 import { Link, useLocation } from "react-router-dom";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import UserAvatar from "./UserAvatar";
+import { useSelector, useDispatch } from "react-redux";
+import { setOpenSidebar } from "../redux/slices/authSlice";
 
 export default function Header() {
   const path = useLocation().pathname;
+  const { user } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+
   return (
     <Navbar className="border-b-8 border-t-2 border-teal-600 h-30">
       <Link
@@ -21,27 +27,23 @@ export default function Header() {
           type="text"
           placeholder="Search..."
           icon={MagnifyingGlassIcon}
-          className="hidden lg:inline"
+          className="flex-1 outline-none bg-transparent placeholder:text-gray-500 text-gray-800"
         />
       </form>
-      <Button className="w-10 h-10 lg:hidden" color="gray">
-        <MagnifyingGlassIcon />
-      </Button>
+
       <div className="flex gap-3 md:order-2">
-        {/* <Link to="/login">
-          <Button gradientDuoTone="purpleToBlue">Login</Button>
-        </Link> */}
-        <Navbar.Toggle />
+        {user && (
+          <>
+            <button
+              onClick={() => dispatch(setOpenSidebar(true))}
+              className="text-2xl text-gray-500 block md:hidden"
+            >
+              ☰
+            </button>
+            <UserAvatar fullName={user.name} />{" "}
+          </>
+        )}
       </div>
-      {/* <Navbar.Collapse>
-        <Navbar.Link as={Link} to="/" active={path === "/"}>
-          Home
-        </Navbar.Link>
-        <Navbar.Link as={Link} to="/projects" active={path === "/projects"}>
-          Projects
-        </Navbar.Link>
-      
-      </Navbar.Collapse> */}
     </Navbar>
   );
 }

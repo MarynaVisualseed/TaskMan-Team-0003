@@ -24,30 +24,14 @@ export function dateFormatter(dateString) {
   return formattedDate;
 }
 
-// export default function getInitials(fullName) {
-//   if (!fullName) return ""; // Добавьте проверку на undefined или пустую строку
-//   const names = fullName.split(" ");
-//   const initials = names.slice(0, 2).map((name) => name[0].toUpperCase());
-//   const initialsString = initials.join("");
-//   return initialsString;
-// }
-
-export function getInitials(fullName) {
+export const getInitials = (fullName) => {
+  if (!fullName || typeof fullName !== "string") {
+    return "";
+  }
   const names = fullName.split(" ");
-
-  const initials = names.slice(0, 2).map((name) => name[0].toUpperCase());
-
-  const initialsStr = initials.join("");
-
-  return initialsStr;
-}
-
-// export default function getInitials(fullName) {
-//   const names = fullName.split(" ");
-//   const initials = names.slice(0, 2).map((name) => name[0].toUpperCase());
-//   const initialsStr = initials.join("");
-//   return initialsStr;
-// }
+  const initials = names.map((name) => name.charAt(0).toUpperCase()).join("");
+  return initials;
+};
 
 export const PRIOTITYSTYELS = {
   high: "text-red-600",

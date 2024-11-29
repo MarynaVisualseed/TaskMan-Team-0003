@@ -1,11 +1,6 @@
 import React from "react";
-import {
-  MdDashboard,
-  MdOutlineAddTask,
-  MdOutlinePendingActions,
-  MdTaskAlt,
-} from "react-icons/md";
-import { FaTasks, FaTrashAlt, FaUsers } from "react-icons/fa";
+import { MdDashboard, MdOutlineAddTask } from "react-icons/md";
+import { FaTasks, FaUsers } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { setOpenSidebar } from "../redux/slices/authSlice";
@@ -28,32 +23,11 @@ const linkData = [
     link: "tasks",
     icon: <FaTasks />,
   },
-  // {
-  //   label: "Completed",
-  //   link: "completed/completed",
-  //   icon: <MdTaskAlt />,
-  // },
-  // {
-  //   label: "In Progress",
-  //   link: "inprogress/inprogress",
-  //   icon: <MdOutlinePendingActions />,
-  // },
-  // {
-  //   label: "Todo",
-  //   link: "todo",
-  //   icon: <MdOutlineAddTask />,
-  // },
   {
     label: "Users",
     link: "users",
     icon: <FaUsers />,
   },
-
-  // {
-  //   label: "Trash",
-  //   link: "trash",
-  //   icon: <FaTrashAlt />,
-  // },
 ];
 
 const Sidebar = () => {
@@ -65,7 +39,6 @@ const Sidebar = () => {
   const path = location.pathname.split("/")[1];
 
   const sidebarLinks = user?.isAdmin ? linkData : linkData.slice(0, 5);
-  //   const sidebarLinks = user?.user ? linkData : linkData.slice(0, 5);
 
   const closeSibebar = () => {
     dispatch(setOpenSidebar(false));

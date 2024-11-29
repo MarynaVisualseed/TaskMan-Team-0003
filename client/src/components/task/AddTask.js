@@ -39,12 +39,13 @@ const AddTask = ({ open, setOpen }) => {
   return (
     <>
       <ModalWindow open={open} setOpen={setOpen}>
-        <form onSubmit={handleSubmit(submitHandler)}>
+        <form
+          onSubmit={handleSubmit(submitHandler)}
+          className="p-1 max-w-lg mx-auto mb-1 mr-4"
+        >
           <DialogTitle
-            // as="h2"
-            // className="text-base font-bold leading-6 text-gray-900 mb-4"
             as="h3"
-            className="text-lg font-medium leading-6 text-gray-900"
+            className="text-lg font-bold leading-6 text-gray-900 mb-5"
           >
             {task ? "UPDATE TASK" : "ADD TASK"}
           </DialogTitle>
@@ -62,13 +63,6 @@ const AddTask = ({ open, setOpen }) => {
 
             <UserList setTeam={setTeam} team={team} />
 
-            {/* <div className="flex flex-col w-1/2">
-              <label className="text-gray-700">Task Stage</label>
-              <SelectList
-                lists={LISTS}
-                selected={stage}
-                setSelected={setStage}
-              /> */}
             <div className="flex items-center gap-5">
               <div className="w-1/2">
                 <SelectList
@@ -128,10 +122,9 @@ const AddTask = ({ open, setOpen }) => {
                 </span>
               ) : (
                 <Button
-                  label="Submit"
+                  label="SUBMIT"
                   type="submit"
                   gradientDuoTone="purpleToPink"
-                  // className="bg-blue-600 px-8 text-sm font-semibold text-white hover:bg-blue-700  sm:w-auto"
                   className="px-8 text-sm font-semibold text-white sm:w-auto"
                 />
               )}
@@ -139,10 +132,9 @@ const AddTask = ({ open, setOpen }) => {
               <Button
                 type="button"
                 gradientDuoTone="pinkToOrange"
-                // className="bg-white px-5 text-sm font-semibold text-gray-900 sm:w-auto"
                 className="px-5 text-sm font-semibold text-gray-900 sm:w-auto"
                 onClick={() => setOpen(false)}
-                label="Cancel"
+                label="CANCEL"
               />
             </div>
           </div>
