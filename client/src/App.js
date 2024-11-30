@@ -8,7 +8,7 @@ import { IoClose } from "react-icons/io5";
 
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
-import Header from "./components/Header"; // Updated Header
+import Header from "./components/Header"; 
 import CustomFooter from "./components/CustomFooter";
 
 import Login from "./pages/Login";
@@ -20,6 +20,7 @@ import Users from "./pages/Users";
 import Task from "./pages/Task";
 import Project from "./pages/Project";
 import { setOpenSidebar } from "./redux/slices/authSlice";
+
 
 // Layout Component for Protected Routes
 function ProtectedLayout() {
@@ -108,7 +109,7 @@ function App() {
         {/* Protected Routes */}
         <Route element={<ProtectedLayout />}>
           <Route path="/projects" element={<Projects />} />
-          <Route path="/project" element={<Project />} />
+          <Route path="/project/" element={<Project />} />
           <Route path="/tasks" element={<Tasks />} />
           <Route path="/task/:id" element={<Task />} />
           <Route path="/users" element={<Users />} />

@@ -1160,3 +1160,133 @@ export const activitiesData = [
     by: "Akwasi Asante",
   },
 ];
+
+
+export const projects = [
+  {
+    id: "1",
+    name: "Website Redesign",
+    description: "Redesign the company's corporate website to improve user experience and branding.",
+    startDate: "2024-01-10",
+    endDate: "2024-03-15",
+    budget: "15000",
+    priority: "High",
+    status: "Ongoing",
+    team: [
+      {
+        _id: "65c202d4aa62f32ffd1303cc",
+        name: "Maryna Garkusha",
+        title: "Tech Lead",
+        role: "Admin",
+      },
+      {
+        _id: "65c317360fd860f958baa08e",
+        name: "Tomáš Pokštefl",
+        title: "UX Designer",
+        role: "Designer",
+      },
+    ],
+  },
+  {
+    id: "2",
+    name: "Mobile App Development",
+    description: "Develop a cross-platform mobile app for the e-commerce platform.",
+    startDate: "2024-02-01",
+    endDate: "2024-06-30",
+    budget: "30000",
+    priority: "Medium",
+    status: "Paused",
+    team: [
+      {
+        _id: "65c30b96e639681a13def0b5",
+        name: "Lucie Adamová",
+        title: "Team Leader",
+        role: "Manager",
+      },
+      {
+        _id: "65c3176a0fd860f958baa099",
+        name: "Martin Mizerák",
+        title: "Data Analyst",
+        role: "Analyst",
+      },
+    ],
+  },
+  {
+    id: "3",
+    name: "Marketing Campaign Launch",
+    description: "Launch a digital marketing campaign for the new product line.",
+    startDate: "2024-03-01",
+    endDate: "2024-04-30",
+    budget: "10000",
+    priority: "Low",
+    status: "Ongoing",
+    team: [
+      {
+        _id: "65c317360fd860f958baa08e",
+        name: "Tomáš Pokštefl",
+        title: "UX Designer",
+        role: "Designer",
+      },
+      {
+        _id: "65c202d4aa62f32ffd1303cc",
+        name: "Maryna Garkusha",
+        title: "Tech Lead",
+        role: "Admin",
+      },
+    ],
+  },
+  {
+    id: "4",
+    name: "Data Warehouse Integration",
+    description: "Integrate a new data warehouse solution to improve data analytics and reporting.",
+    startDate: "2024-02-15",
+    endDate: "2024-05-15",
+    budget: "50000",
+    priority: "High",
+    status: "Completed",
+    team: [
+      {
+        _id: "65c3176a0fd860f958baa099",
+        name: "Martin Mizerák",
+        title: "Data Analyst",
+        role: "Analyst",
+      },
+      {
+        _id: "65c30b96e639681a13def0b5",
+        name: "Lucie Adamová",
+        title: "Team Leader",
+        role: "Manager",
+      },
+    ],
+  },
+  {
+    id: "5",
+    name: "Product Launch Event",
+    description: "Organize a launch event for the new product release, including media and influencer engagement.",
+    startDate: "2024-04-10",
+    endDate: "2024-05-20",
+    budget: "20000",
+    priority: "Medium",
+    status: "Ongoing",
+    team: [
+      {
+        _id: "65c202d4aa62f32ffd1303cc",
+        name: "Maryna Garkusha",
+        title: "Tech Lead",
+        role: "Admin",
+      },
+      {
+        _id: "65c317360fd860f958baa08e",
+        name: "Tomáš Pokštefl",
+        title: "UX Designer",
+        role: "Designer",
+      },
+      {
+        _id: "65c3176a0fd860f958baa099",
+        name: "Martin Mizerák",
+        title: "Data Analyst",
+        role: "Analyst",
+      },
+    ],
+  },
+];
