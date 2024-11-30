@@ -1,0 +1,134 @@
+/* Header styles */
+header {
+  background-color: white;
+  border-bottom: 2px solid #14b8a6; /* Teal border */
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo styling */
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4f46e5; /* Indigo */
+}
+
+header .logo span {
+  background: linear-gradient(to right, #6366f1, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Sidebar styles */
+.sidebar {
+  background-color: white;
+  border-right: 1px solid #e5e7eb; /* Gray border */
+  height: 100%;
+  padding: 1rem;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #374151; /* Gray text */
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #4f46e5; /* Indigo text on hover */
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button.primary {
+  background-color: #6366f1; /* Indigo */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+button.primary:hover {
+  background-color: #4f46e5; /* Darker indigo */
+}
+
+button.secondary {
+  background-color: #ec4899; /* Pink */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+button.secondary:hover {
+  background-color: #db2777; /* Darker pink */
+}
+
+/* Footer styles */
+footer {
+  background-color: #1f2937; /* Dark gray */
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.875rem; /* Small text */
+}
+
+footer a {
+  color: #6366f1; /* Indigo */
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #4f46e5; /* Darker indigo */
+}
+
+/* Form container styles */
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+/* Avatar styling */
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4f46e5; /* Indigo */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+/* Utility class for shadows */
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design for sidebar */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .mobile-sidebar {
+    display: block;
+  }
+}
