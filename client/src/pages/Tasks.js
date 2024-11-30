@@ -63,9 +63,9 @@ export default function Tasks() {
       <Tabs tabs={TABS} setSelected={setSelected}>
         {!status && (
           <div className="w-full flex justify-between gap-4 md:gap-x-12 py-4">
-            <TaskTitle label="ToDo" className={TASK_TYPE.todo} />
+            {/* <TaskTitle label="ToDo" className={TASK_TYPE.todo} />
             <TaskTitle label="In Progress" className={TASK_TYPE.inprogress} />
-            <TaskTitle label="Completed" className={TASK_TYPE.completed} />
+            <TaskTitle label="Completed" className={TASK_TYPE.completed} /> */}
           </div>
         )}
         {selected === 0 ? (

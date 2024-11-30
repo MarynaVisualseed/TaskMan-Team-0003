@@ -23,11 +23,11 @@ const linkData = [
     link: "tasks",
     icon: <FaTasks />,
   },
-  {
-    label: "Users",
-    link: "users",
-    icon: <FaUsers />,
-  },
+  // {
+  //   label: "Users",
+  //   link: "users",
+  //   icon: <FaUsers />,
+  // },
 ];
 
 const Sidebar = () => {

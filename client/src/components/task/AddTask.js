@@ -14,7 +14,7 @@ const PRIORIRY = ["HIGH", "MEDIUM", "NORMAL", "LOW"];
 
 const uploadedFileURLs = [];
 
-const AddTask = ({ open, setOpen }) => {
+const AddTask = ({ open, setOpen, className }) => {
   const task = "";
 
   const {
@@ -45,7 +45,7 @@ const AddTask = ({ open, setOpen }) => {
         >
           <DialogTitle
             as="h3"
-            className="text-lg font-bold leading-6 text-gray-900 mb-5"
+            className="text-lg font-bold leading-6 text-gray-900 mb-7"
           >
             {task ? "UPDATE TASK" : "ADD TASK"}
           </DialogTitle>
@@ -56,12 +56,17 @@ const AddTask = ({ open, setOpen }) => {
               type="text"
               name="title"
               label="Task Title"
-              className="w-full rounded"
+              // className="w-full rounded"
+              className="w-full h-12 rounded-md"
               register={register("title", { required: "Title is required" })}
               error={errors.title ? errors.title.message : ""}
             />
 
-            <UserList setTeam={setTeam} team={team} />
+            <UserList
+              setTeam={setTeam}
+              team={team}
+              className="w-full h-12 rounded-md"
+            />
 
             <div className="flex items-center gap-5">
               <div className="w-1/2">
@@ -70,6 +75,7 @@ const AddTask = ({ open, setOpen }) => {
                   lists={LISTS}
                   selected={stage}
                   setSelected={setStage}
+                  className="w-full h-12 rounded-md"
                 />
               </div>
 
@@ -79,11 +85,12 @@ const AddTask = ({ open, setOpen }) => {
                   type="date"
                   name="date"
                   label="Task Date"
-                  className="w-full rounded h-full"
+                  // className="w-full rounded h-full"
                   register={register("date", {
                     required: "Date is required!",
                   })}
                   error={errors.date ? errors.date.message : ""}
+                  className="w-full h-12 rounded-md"
                 />
               </div>
             </div>
@@ -94,6 +101,7 @@ const AddTask = ({ open, setOpen }) => {
                 lists={PRIORIRY}
                 selected={priority}
                 setSelected={setPriority}
+                className="w-full h-12 rounded-md"
               />
 
               <div className="w-full flex items-center justify-center mt-4">

@@ -134,7 +134,7 @@ const TaskCard = ({ task }) => {
         <div className="w-full pb-2">
           {/* Другие элементы TaskCard */}
           <button onClick={handleOpenModal} className="btn-add-details">
-            <IoMdAdd className="text-lg" />
+            <IoMdAdd className="text-lg mr-2" />
             ADD DETAILS
           </button>
 

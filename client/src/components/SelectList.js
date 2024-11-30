@@ -10,14 +10,17 @@ import { BsChevronExpand } from "react-icons/bs";
 import { MdCheck } from "react-icons/md";
 import { Transition } from "@headlessui/react";
 
-const SelectList = ({ lists, selected, setSelected, label }) => {
+const SelectList = ({ lists, selected, setSelected, label, className }) => {
   return (
     <div className="w-full">
       {label && <p className="text-gray-700">{label}</p>}
 
       <Listbox value={selected} onChange={setSelected}>
         <div className="relative mt-1">
-          <ListboxButton className="relative w-full cursor-default rounded bg-white pl-3 pr-10 text-left px-3 py-2.5 2xl:py-3 border border-gray-300 sm:text-sm">
+          <ListboxButton
+            className={`relative w-full cursor-default rounded bg-white pl-3 pr-10 text-left px-3 py-2.5 2xl:py-3 border border-gray-300 sm:text-sm ${className}`}
+          >
+            {/* <ListboxButton className="relative w-full cursor-default rounded bg-white pl-3 pr-10 text-left px-3 py-2.5 2xl:py-3 border border-gray-300 sm:text-sm"> */}
             <span className="block truncate">{selected}</span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
               <BsChevronExpand

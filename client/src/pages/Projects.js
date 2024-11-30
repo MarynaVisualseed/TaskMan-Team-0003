@@ -26,7 +26,9 @@ export default function Projects() {
 
   // Filter projects by status if status param is provided
   const filteredProjects = status
-    ? projects.filter((project) => project.status.toLowerCase() === status.toLowerCase())
+    ? projects.filter(
+        (project) => project.status.toLowerCase() === status.toLowerCase()
+      )
     : projects;
 
   // Tabs configuration for grid and list views
@@ -34,16 +36,12 @@ export default function Projects() {
     {
       title: "Grid",
       icon: <MdGridView />,
-      component: (
-        <ProjectBoard projects={filteredProjects} />
-      ),
+      component: <ProjectBoard projects={filteredProjects} />,
     },
     {
       title: "List",
       icon: <FaList />,
-      component: (
-        <ProjectTable projects={filteredProjects} />
-      ),
+      component: <ProjectTable projects={filteredProjects} />,
     },
   ];
 
@@ -67,13 +65,17 @@ export default function Projects() {
             )}
           </div>
           <Tabs tabs={TABS} setSelected={setSelectedTab}>
-            {!status && (
+            {/* {!status && (
               <div className="w-full flex justify-between gap-4 md:gap-x-12 py-4">
                 {PROJECT_STATUS.map((statusLabel, index) => (
-                  <ProjectTitle key={index} label={statusLabel} className={`bg-${statusLabel.toLowerCase()}-500`} />
+                  <ProjectTitle
+                    key={index}
+                    label={statusLabel}
+                    className={`bg-${statusLabel.toLowerCase()}-500`}
+                  />
                 ))}
               </div>
-            )}
+            )} */}
             {TABS[selectedTab].component}
           </Tabs>
           <AddProject open={isCreating} setOpen={setIsCreating} />

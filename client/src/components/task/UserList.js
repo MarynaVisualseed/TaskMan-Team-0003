@@ -14,7 +14,7 @@ import {
 import { Transition } from "@headlessui/react";
 import { useEffect } from "react";
 
-const UserList = ({ setTeam, team }) => {
+const UserList = ({ setTeam, team, className }) => {
   const data = summary.users || []; // changed
   const [selectedUsers, setSelectedUsers] = useState([]);
 
@@ -38,7 +38,10 @@ const UserList = ({ setTeam, team }) => {
       <p className="text-gray-700">Task Assinged To: </p>
       <Listbox value={selectedUsers} onChange={setSelectedUsers} multiple>
         <div className="relative mt-1">
-          <ListboxButton className="relative w-full cursor-default rounded bg-white pl-3 pr-10 text-left px-3 py-2.5 2xl:py-3 border border-gray-300 sm:text-sm">
+          <ListboxButton
+            className={`relative w-full cursor-default rounded bg-white pl-3 pr-10 text-left px-3 py-2.5 2xl:py-3 border border-gray-300 sm:text-sm ${className}`}
+          >
+            {/* <ListboxButton className="relative w-full cursor-default rounded bg-white pl-3 pr-10 text-left px-3 py-2.5 2xl:py-3 border border-gray-300 sm:text-sm"> */}
             <span className="block truncate">
               {selectedUsers
                 ?.filter((user) => user)
