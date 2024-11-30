@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import {
   Menu,
   Transition,
@@ -6,25 +6,20 @@ import {
   MenuItems,
   MenuItem,
 } from "@headlessui/react";
-import { Fragment, useState } from "react";
 import { FaUser, FaUserLock } from "react-icons/fa";
 import { IoLogOutOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { getInitials } from "../utils/index.js";
 import clsx from "clsx";
 
-const UserAvatar = ({ fullName }) => {
-  const [open, setOpen] = useState(false);
-  const [openPassword, setOpenPassword] = useState(false);
+const UserAvatar = ({ fullName, onProfileClick }) => {
   const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const initials = getInitials(fullName);
 
   const logoutHandler = () => {
     console.log("logout");
   };
-  const initials = getInitials(fullName);
 
   return (
     <>
@@ -47,10 +42,11 @@ const UserAvatar = ({ fullName }) => {
           >
             <MenuItems className="absolute right-0 mt-2 w-56 origin-top-right divide-gray-100 rounded-md bg-white shadow-2xl ring-1 ring-black/5 focus:outline-none">
               <div className="px-1 py-1">
+                {/* Profile MenuItem */}
                 <MenuItem>
                   {({ active }) => (
                     <button
-                      onClick={() => setOpen(true)}
+                      onClick={onProfileClick} 
                       className={clsx(
                         active ? "bg-blue-500 text-white" : "text-gray-900",
                         "group flex rounded-md items-center w-full px-2 py-2 text-sm"
@@ -62,10 +58,10 @@ const UserAvatar = ({ fullName }) => {
                   )}
                 </MenuItem>
 
+                {/* Change Password MenuItem */}
                 <MenuItem>
                   {({ active }) => (
                     <button
-                      onClick={() => setOpenPassword(true)}
                       className={clsx(
                         active ? "bg-blue-500 text-white" : "text-gray-900",
                         "group flex rounded-md items-center w-full px-2 py-2 text-sm"
@@ -77,6 +73,7 @@ const UserAvatar = ({ fullName }) => {
                   )}
                 </MenuItem>
 
+                {/* Logout MenuItem */}
                 <MenuItem>
                   {({ active }) => (
                     <button
