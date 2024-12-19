@@ -1105,6 +1105,7 @@ export const user = {
   title: "Tech Lead",
   role: "Admin",
   email: "admin@mts.com",
+  password: "password123",
   isAdmin: true,
   tasks: [],
   createdAt: "2024-02-06T09:58:44.794Z",

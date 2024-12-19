@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const ProjectTable = ({ projects }) => {
+const ProjectTable = ({ projects, onDeleteProject }) => {
     const navigate = useNavigate();
 
     const getStatusColor = (status) => {
@@ -41,6 +41,12 @@ const ProjectTable = ({ projects }) => {
                                 >
                                     Open Project
                                 </button>
+                                <button
+                                    onClick={() => onDeleteProject(project.id)}
+                                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded"
+                                >
+                                    Delete
+                                </button>                                
                             </td>
                         </tr>
                     ))}
