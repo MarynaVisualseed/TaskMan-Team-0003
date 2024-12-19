@@ -15,12 +15,12 @@ import {
 import { RxActivityLog } from "react-icons/rx";
 import { useParams } from "react-router-dom";
 
-import { tasks } from "../assets/data";
+import { tasks, user as mockUser } from "../assets/data";
 import Tabs from "../components/Tabs";
 import { PRIOTITYSTYELS, TASK_TYPE } from "../utils/index.js";
-import Button from "../components/Button";
 import { getInitials } from "../utils/index.js";
-import Loader from "../components/Loader";
+import Comment from "../components/comment.js";
+
 
 // const assets = [
 //   "https://images.pexels.com/photos/2418664/pexels-photo-2418664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -43,7 +43,7 @@ const bgColor = {
 
 const TABS = [
   { title: "Task Detail", icon: <FaTasks /> },
-  { title: "Activities/Timeline", icon: <RxActivityLog /> },
+  { title: "Activities/Comments", icon: <RxActivityLog /> },
 ];
 
 const TASKTYPEICON = {
@@ -95,15 +95,28 @@ const Task = () => {
   const [description, setDescription] = useState("");
   // const task = tasks[3];
   const [task, setTask] = useState(null);
+  const [activities, setActivities] = useState([]);
 
   useEffect(() => {
     const foundTask = tasks.find((task) => task._id === id);
     setTask(foundTask);
+    setActivities(foundTask?.activities || []);
   }, [id]);
 
   if (!task) {
     return <div>Loading...</div>;
   }
+
+  const handleAddComment = (newComment) => {
+    const newActivity = {
+      type: "commented",
+      by: { name: mockUser.name || "Anonymous" }, 
+      date: new Date().toLocaleString(),
+      activity: newComment,
+    };
+    setActivities((prevActivities) => [newActivity, ...prevActivities]); 
+  };
+ 
 
   const handleDescriptionChange = (e) => {
     setDescription(e.target.value);
@@ -249,7 +262,7 @@ const Task = () => {
           </>
         ) : (
           <>
-            <Activities activity={task?.activities} id={id} />
+            <Activities activity={activities} onAddComment={handleAddComment} id={id} />
           </>
         )}
       </Tabs>
@@ -257,12 +270,18 @@ const Task = () => {
   );
 };
 
-const Activities = ({ activity, id }) => {
+const Activities = ({ activity, onAddComment, id }) => {
   const [selected, setSelected] = useState(act_types[0]);
   const [text, setText] = useState("");
   const isLoading = false;
 
-  const handleSubmit = async () => {};
+  // const handleSubmit = () => {
+  //   if (text.trim()) {
+  //     onAddComment(text); 
+  //     setText(""); 
+  //   }
+  // };
+
 
   const Card = ({ item }) => {
     return (
@@ -320,28 +339,12 @@ const Activities = ({ activity, id }) => {
               <p>{item}</p>
             </div>
           ))}
-          <h4 className="text-gray-600 font-semibold text-lg mt-10 mb-0">
-            COMMENT
-          </h4>
-          <textarea
-            rows={10}
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            placeholder="Type ......"
-            className="bg-white w-full mt-5 border border-gray-300 outline-none p-4 rounded-md focus:ring-2 ring-blue-500"
-          ></textarea>
-          {isLoading ? (
-            <Loader />
-          ) : (
-            <Button
-              gradientDuoTone="purpleToPink"
-              type="button"
-              label="SUBMIT"
-              onClick={handleSubmit}
-            />
-          )}
+          </div>
+          <div className="w-full">
+              <Comment onSubmitComment={onAddComment} />
+          </div>
+
         </div>
-      </div>
     </div>
   );
 };

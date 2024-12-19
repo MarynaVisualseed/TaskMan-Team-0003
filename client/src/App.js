@@ -109,6 +109,7 @@ function App() {
         <Route element={<ProtectedLayout />}>
           <Route path="/projects" element={<Projects />} />
           <Route path="/project/" element={<Project />} />
+           {/* <Route path="/project/:id" element={<Project />} />  // Route to open specific project based on its ID*/}
           <Route path="/tasks" element={<Tasks />} />
           <Route path="/task/:id" element={<Task />} />
           <Route path="/users" element={<Users />} />

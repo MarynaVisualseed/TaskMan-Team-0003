@@ -19,7 +19,10 @@ const Textbox = React.forwardRef(
             {...register}
             aria-invalid={error ? "true" : "false"}
             className={clsx(
-              "bg-transparent px-3 py-3 2xl:py-3 border border-gray-300 placeholder-gray-400 text-gray-800 outline-none text-base focus:ring-2 ring-blue-300",
+              "bg-transparent px-3 py-3 2xl:py-3 border placeholder-gray-400 text-gray-800 outline-none text-base focus:ring-2",
+              error
+                ? "border-red-500 focus:ring-red-300"
+                : "border-gray-300 focus:ring-blue-300",
               className
             )}
           />
